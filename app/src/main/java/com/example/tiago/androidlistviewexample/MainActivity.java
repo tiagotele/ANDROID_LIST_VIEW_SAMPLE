@@ -2,6 +2,7 @@ package com.example.tiago.androidlistviewexample;
 
 import android.app.ListActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -51,13 +52,16 @@ public class MainActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Log.d("INFO","Position: "+position+" id: "+id);
+        /*Log.d("INFO","Position: "+position+" id: "+id);
         TextView t = (TextView) v.findViewById(R.id.tweetTitle);
         if(t.getText().equals("Header Text")){
             t.setText("Tweet Clicked");
         }else{
             t.setText("Header Text");
-        }
+        }*/
+
+        Intent intent = new Intent(this, TweetDetailActivity.class);
+        startActivity(intent);
 
     }
 }
